@@ -103,7 +103,7 @@ ENV/
 # kaggle
 .kaggle-cli/
 
-data/
+data/*
 
 # keep
 !.gitkeep
