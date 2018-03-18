@@ -30,7 +30,6 @@ pip install -r requirements.txt
 
 ## Getting started
 ```
-export JUPYTER_PATH=${JUPYTER_PATH}:`pwd`/data
 jupyter notebook --config=./jupyter_notebook_config.py
 ```
 
