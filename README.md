@@ -6,8 +6,8 @@ link: https://www.kaggle.com/c/talkingdata-adtracking-fraud-detection
 ## Setting up your python environment
 ```bash
 python -m virtualenv venv
-./source ./venv/bin/activate
-pip install -r requirements.txt
+source ./venv/bin/activate
+pip install -U -r requirements.txt
 ```
 
 ## Getting the data
