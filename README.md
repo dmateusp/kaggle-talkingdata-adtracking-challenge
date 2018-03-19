@@ -31,6 +31,7 @@ pip install -U -r requirements.txt
     
     This script uses a percentage of unique IPs and their full click history to generate a sample (instead of using a random sample which could exclude parts of click history for a given IP)
     ```bash
+    export DATA_FOLDER=$(pwd)/data
     python ./scripts/create_sample.py
     ```
     
