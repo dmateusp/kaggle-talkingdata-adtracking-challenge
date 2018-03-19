@@ -30,7 +30,10 @@ pip install -r requirements.txt
 
 ## Getting started
 ```
-jupyter notebook --config=./jupyter_notebook_config.py
+(
+  export DATA_FOLDER=$(pwd)/data
+  jupyter notebook --config=./jupyter_notebook_config.py
+)
 ```
 
-Note: data files are available under `../data/`
+Note: data files are available under `path.join(environ['DATA_FOLDER'],"train_sample.csv.zip")`
