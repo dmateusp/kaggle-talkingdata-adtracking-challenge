@@ -11,7 +11,7 @@ from os import (environ, path)
 
 PERCENTAGE_OF_IPS = 0.01
 TRAIN_FILE = 'train.csv.zip'
-OUTPUT_SAMPLE_FILE = 'train_sample_full_history.csv.zip'
+OUTPUT_SAMPLE_FILE = 'train_sample_full_history.csv.gz'
 
 print('Reading full train data')
 df = pd.read_csv(path.join(environ['DATA_FOLDER'], TRAIN_FILE))
@@ -28,4 +28,4 @@ print('%.2f%% of rows were taken, %.2f%% of IPs with full click history, %.2f%% 
       % (100 * percentage_of_rows_taken, 100 * PERCENTAGE_OF_IPS, 100 * percentage_of_memory))
 
 print('Writing to file: %s' % OUTPUT_SAMPLE_FILE)
-sample_df.to_csv(path.join(environ['DATA_FOLDER'], OUTPUT_SAMPLE_FILE), compression='gzip', index=False)
+sample_df.to_csv(path.join(environ['DATA_FOLDER'], OUTPUT_SAMPLE_FILE), compression='gzip', index=False, header=True)
