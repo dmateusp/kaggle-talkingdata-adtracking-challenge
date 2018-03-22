@@ -6,8 +6,8 @@ link: https://www.kaggle.com/c/talkingdata-adtracking-fraud-detection
 ## Setting up your python environment
 ```bash
 python -m virtualenv venv
-./source ./venv/bin/activate
-pip install -r requirements.txt
+source ./venv/bin/activate
+pip install -U -r requirements.txt
 ```
 
 ## Getting the data
@@ -27,6 +27,15 @@ pip install -r requirements.txt
       kg download -f test.csv.zip
     )
     ```
+4. Sample the data
+    
+    This script uses a percentage of unique IPs and their full click history to generate a sample (instead of using a random sample which could exclude parts of click history for a given IP)
+    ```bash
+    export DATA_FOLDER=$(pwd)/data
+    python ./scripts/create_sample.py
+    ```
+    
+    The resulting file `./data/train_sample_full_history.csv.zip` will always be the same since the random seed is given when sampling
 
 ## Getting started
 ```
@@ -36,4 +45,4 @@ pip install -r requirements.txt
 )
 ```
 
-Note: data files are available under `path.join(environ['DATA_FOLDER'],"train_sample.csv.zip")`
+Note: data files are available under `path.join(environ['DATA_FOLDER'],"train_sample_full_history.csv.zip")`
