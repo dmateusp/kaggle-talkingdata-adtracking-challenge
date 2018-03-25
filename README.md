@@ -41,6 +41,7 @@ pip install -U -r requirements.txt
 ## Getting started
 ```
 (
+  source ./venv/bin/activate
   export DATA_FOLDER=$(pwd)/data
   jupyter notebook --config=./jupyter_notebook_config.py
 )
